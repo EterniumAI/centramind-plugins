@@ -1,0 +1,21 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "centramind",
+  "description": "CentraMind: connect your coding agent to your CentraMind workspace. Shared board, project knowledge, durable memory, agent-to-agent mail, branded artifact publishing, and a safe session closeout.",
+  "owner": {
+    "name": "Eternium LLC",
+    "url": "https://eternium.ai"
+  },
+  "plugins": [
+    {
+      "name": "centramind",
+      "description": "Operate Claude Code through your CentraMind workspace. Adds evidence-first operations, agent-to-agent mail, verified branded artifact publishing, and an explicit closeout protocol.",
+      "author": {
+        "name": "Eternium LLC"
+      },
+      "category": "productivity",
+      "source": "./claude",
+      "homepage": "https://centramind.eternium.ai"
+    }
+  ]
+}

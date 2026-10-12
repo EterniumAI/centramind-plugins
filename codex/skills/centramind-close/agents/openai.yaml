@@ -1,0 +1,4 @@
+interface:
+  display_name: "Close CentraMind session"
+  short_description: "Checkpoint and close a CentraMind session"
+  default_prompt: "Use $centramind-close to safely wrap up this development session."

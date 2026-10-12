@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "centramind": {
+      "url": "https://api.eternium.ai/mcp"
+    }
+  }
+}

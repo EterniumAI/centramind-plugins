@@ -1,0 +1,4 @@
+interface:
+  display_name: "Publish a CentraMind artifact"
+  short_description: "Create verified artifacts on a branded CentraMind URL"
+  default_prompt: "Use $centramind-artifact to publish this deliverable with the client brand, an Eternium artifact URL, and verified recipient access."

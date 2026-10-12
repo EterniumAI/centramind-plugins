@@ -1,0 +1,20 @@
+{
+  "name": "centramind",
+  "version": "0.4.0",
+  "description": "Operate Claude Code through your CentraMind workspace: shared board, project knowledge, durable memory, agent-to-agent mail, branded artifact publishing, and an explicit closeout protocol.",
+  "author": {
+    "name": "Eternium LLC",
+    "url": "https://eternium.ai"
+  },
+  "homepage": "https://centramind.eternium.ai",
+  "repository": "https://github.com/EterniumAI/centramind-plugins",
+  "license": "UNLICENSED",
+  "keywords": [
+    "centramind",
+    "mcp",
+    "agents",
+    "development",
+    "memory",
+    "orchestration"
+  ]
+}

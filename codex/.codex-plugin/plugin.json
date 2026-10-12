@@ -1,0 +1,40 @@
+{
+  "name": "centramind",
+  "version": "0.4.0",
+  "description": "CentraMind: connect your coding agent to your CentraMind workspace. Shared board, project knowledge, durable memory, agent-to-agent mail, branded artifact publishing, and a safe session closeout.",
+  "author": {
+    "name": "Eternium LLC"
+  },
+  "license": "UNLICENSED",
+  "keywords": [
+    "centramind",
+    "mcp",
+    "agents",
+    "development",
+    "memory",
+    "orchestration"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "CentraMind",
+    "shortDescription": "Operate Codex through your CentraMind workspace.",
+    "longDescription": "CentraMind connects Codex to your workspace\u2019s shared board, memory, handoffs, agent-to-agent mail, artifact publishing, and agent operations. It adds an evidence-first operating workflow, verified branded artifact handoffs, and an explicit closeout protocol that checkpoints unfinished work without silently closing or reprioritizing it.",
+    "developerName": "Eternium LLC",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Orient this repo in CentraMind and show my active work.",
+      "Find the matching dev task and continue it with evidence.",
+      "Publish this artifact with a branded CentraMind URL and verified access.",
+      "Close this session and checkpoint anything unfinished."
+    ],
+    "brandColor": "#7C3AED",
+    "composerIcon": "./assets/centramind-icon.png",
+    "logo": "./assets/centramind-icon.png"
+  }
+}

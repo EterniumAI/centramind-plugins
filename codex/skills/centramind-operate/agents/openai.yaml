@@ -1,0 +1,4 @@
+interface:
+  display_name: "Operate with CentraMind"
+  short_description: "Run your work through CentraMind safely"
+  default_prompt: "Use $centramind-operate to orient this task in CentraMind and execute it with evidence."

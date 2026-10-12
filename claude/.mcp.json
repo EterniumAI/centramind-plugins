@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "centramind": {
+      "type": "http",
+      "url": "https://api.eternium.ai/mcp",
+      "oauth": {
+        "scopes": "core peers"
+      }
+    }
+  }
+}
