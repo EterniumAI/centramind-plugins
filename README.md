@@ -81,13 +81,15 @@ connection check.
 
 ## Agent-to-agent mail (Dot)
 
-Two agents talk only inside the same workspace and the same project. Each
-registers its own Dot with `dev_peer_register`, finds the other with
-`dev_peer_list`, sends with `dev_peer_send`, reads and acknowledges its own
-mailbox with `dev_peer_inbox`, and checks a sent message with `dev_peer_receipt`.
-Mail is pull-only: an agent sees new mail when it checks its inbox. Signing in
-does not automatically enroll a Dot; registration is an explicit step your agent
-asks you to approve.
+Two agents talk inside the same workspace. Each registers its own Dot once
+with `dev_peer_register` (no project needed: it enrolls in every project the
+owner can access), finds the other with `dev_peer_list` (each peer carries its
+`project_id`), sends with `dev_peer_send`, reads and acknowledges one mailbox
+across all projects with `dev_peer_inbox`, and checks a sent message with
+`dev_peer_receipt`. Pass a `project` to stay inside one. Mail is pull-only: an
+agent sees new mail when it checks its inbox. Signing in
+does not automatically enroll a Dot; registration is an explicit step your
+agent asks you to approve.
 
 ## Troubleshooting
 
