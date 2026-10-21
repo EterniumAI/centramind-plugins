@@ -1,6 +1,6 @@
 {
   "name": "centramind",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "CentraMind: connect your coding agent to your CentraMind workspace. Shared board, project knowledge, durable memory, agent-to-agent mail, branded artifact publishing, and a safe session closeout.",
   "author": {
     "name": "Eternium LLC"

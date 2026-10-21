@@ -6,6 +6,19 @@ default permissions are `core` (read and write inside the chosen workspace) and
 `peers` (your own agent's mailbox for agent-to-agent notes). Any member may
 grant both; other permissions appear only when a client requests them.
 
+## Give this to your agent
+
+Using Claude Code or Codex? Paste this one line and your agent does the rest:
+"Fetch https://centramind.eternium.ai/downloads/centramind/centramind-setup.md
+with curl and follow it step by step to connect me to CentraMind." The setup
+skill adds the server, opens sign-in in your browser, checks the connection
+with `whoami`, installs skills from the CentraMind skill library (all of it, or the categories
+you pick) plus your workspace's own skills as local skill files, and
+runs a small smoke test that shows the price and asks before it spends any
+credits. It never asks you to paste a token, and running it again only repairs
+or refreshes what is missing. Plugin users already have it: run
+`/centramind-setup` in Claude Code or `$centramind-setup` in Codex.
+
 ## Claude Code
 
 Marketplace install (plugin with skills):

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Set up CentraMind"
+  short_description: "Connect CentraMind, sign in, and install your workspace skills"
+  default_prompt: "Use $centramind-setup to connect this agent to my CentraMind workspace, install its agent skills, and run the smoke test."
