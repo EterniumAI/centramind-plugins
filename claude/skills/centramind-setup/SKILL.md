@@ -17,6 +17,7 @@ Work through the steps in order. Every step checks before it acts, so a re-run (
 - Never ask the user to paste a token, code, or callback URL into the chat. Sign-in happens in their browser.
 - Never remove or replace an existing CentraMind connection without the user's yes.
 - Nothing in this setup spends money except the one test image in step 6, and only after the user approves its exact price.
+- **After setup, take on work through the board.** Before any work starts (investigating, editing, or launching another agent), find the existing task with `dev_task_list` (or `list_tasks`) and never create a duplicate, claim it with `dev_task_claim` or coordinate with the session that holds it through `dev_peer_send`, keep its status current with `dev_task_update` until it is done, and if a claim is refused or a claim tool is missing, tell the user instead of working untracked. The full order is in the public guide, [How your agent takes on tasks](https://github.com/EterniumAI/centramind-plugins#how-your-agent-takes-on-tasks); with the CentraMind plugin installed, `centramind-operate` carries it too.
 
 ## 1. Detect the harness
 
@@ -139,6 +140,5 @@ Give the user a short summary:
 - How many skills were installed (library and workspace), from which categories, and where.
 - What the smoke test produced and what it cost (or that it was skipped, and why).
 - Three things to try next, drawn from the installed skills or the roster (for example, "ask the video editor agent to cut your latest clip").
-- For how to take on work, follow `centramind-operate`: find the existing task, check who owns it, and claim it or coordinate with the holder before working.
 
 Then stop. Do not start other CentraMind work unless the user asks. Re-run `/centramind-setup` (Codex: `$centramind-setup`) any time to refresh skills or repair the connection.
