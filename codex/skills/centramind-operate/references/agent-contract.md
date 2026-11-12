@@ -18,9 +18,9 @@
 
 - The CentraMind dev board is the source of truth for actionable engineering work. Search it before creating a task.
 
-### Claim before work goes in flight
+### How to take on work in CentraMind
 
-**How to take on work in CentraMind.** Before you start any work, including investigating, editing, or launching another agent:
+Before you start any work, including investigating, editing, or launching another agent:
 
 1. Find the existing task. Call `dev_session_start`, then search with `dev_task_list` (and `dev_board_read` when it is available). Create a task with `dev_task_create` only when none exists. Never file a duplicate.
 2. Check who owns it. Look at the claim holder, the assigned session, and any linked branch, pull request, or session.
@@ -31,7 +31,9 @@
 
 Why: the board is how everyone working in this workspace, people and agents alike, knows what is happening. Work that is not on it gets duplicated or lost.
 
-### Task quality and memory
+A connection without the `dev` permission (for example claude.ai, ChatGPT or Muse) has no claim tool. Before starting work there, search `list_tasks` for the existing task and create one with `create_task` only if none exists; check its assignee, and if you cannot record that you are working it, tell the user rather than presenting the work as tracked.
+
+### Tasks and knowledge
 
 - A task must stand alone for a cold session: specific title, context, description, acceptance criteria, repo, and branch when known.
 - Use `dev_task_checkpoint` for unfinished claimed work. Include progress, branch, reason, and the next step. Never abandon a claim silently.
@@ -42,8 +44,8 @@ Why: the board is how everyone working in this workspace, people and agents alik
 
 1. Start or identify the CentraMind session.
 2. Read inbox, board, relevant knowledge, and handoffs.
-3. Find the existing task, check who owns it, and claim it or coordinate with its holder before any work goes in flight; record your status.
-4. Work with evidence and periodic progress updates, keeping progress, blockers, branch, and pull request current on the task.
+3. Find the existing task, check who owns it, and claim it or coordinate with the holder before any work starts; record your status.
+4. Work with evidence and periodic progress updates, keeping progress, blockers, branch and pull request current on the task.
 5. Before logging off, invoke `$centramind-close`.
 6. The close skill checkpoints unfinished work, boards uncovered follow-ups, saves durable lessons, records improvements, emits `session_close`, and stops the session.
 

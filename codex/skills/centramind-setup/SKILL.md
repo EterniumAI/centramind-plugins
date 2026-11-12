@@ -139,5 +139,6 @@ Give the user a short summary:
 - How many skills were installed (library and workspace), from which categories, and where.
 - What the smoke test produced and what it cost (or that it was skipped, and why).
 - Three things to try next, drawn from the installed skills or the roster (for example, "ask the video editor agent to cut your latest clip").
+- For how to take on work, follow `centramind-operate`: find the existing task, check who owns it, and claim it or coordinate with the holder before working.
 
 Then stop. Do not start other CentraMind work unless the user asks. Re-run `/centramind-setup` (Codex: `$centramind-setup`) any time to refresh skills or repair the connection.
