@@ -11,17 +11,28 @@ Read [references/agent-contract.md](references/agent-contract.md) before meaning
 
 1. Identify the current repository, branch, project, instance, and user request.
 2. Read the nearest `CLAUDE.md` or `AGENTS.md` and the relevant project context.
-3. Call `whoami` first: it reports your workspace, project scope and granted permissions. With the `dev` permission, call `dev_session_start` and read the inbox, active handoffs, relevant project knowledge, and the dev board. With a `core`-only connection, use `get_overview`, `list_tasks`, `recall` and `submit_request`; do not claim board writes you cannot make.
+3. Call `whoami` first: it reports your workspace, project scope and granted permissions. With the `dev` permission, call `dev_session_start` and read the inbox, active handoffs, relevant project knowledge, and the dev board. With a `core`-only connection, use `get_overview`, `list_tasks`, `recall` and `submit_request`; do not claim board writes you cannot make. That connection has no claim tool, so search `list_tasks` for the existing task before starting work and create one with `create_task` only if none exists; check its assignee, and if you cannot record that you are working it, tell the user rather than presenting the work as tracked.
 4. Inspect `git status`, current branch, upstream comparison, and recent history before concluding work is missing.
 5. For UI work, inspect the live surface before reasoning only from source.
 
-If CentraMind tools are unavailable, or a tool you need is not in your tool list, report that boundary once (name the missing permission) and continue with safe local evidence. Never claim a board, memory, or session write happened when it did not.
+If CentraMind tools are unavailable, or a tool you need is not in your tool list, report that boundary once (name the missing permission). You may continue read-only local investigation, but do not start building tracked work, and never present it as tracked. Never claim a board, memory, or session write happened when it did not.
 
 ## Work from the board
 
-- Search before creating a task.
+**How to take on work in CentraMind.** Before you start any work, including investigating, editing, or launching another agent:
+
+1. Find the existing task. Call `dev_session_start`, then search with `dev_task_list` (and `dev_board_read` when it is available). Create a task with `dev_task_create` only when none exists. Never file a duplicate.
+2. Check who owns it. Look at the claim holder, the assigned session, and any linked branch, pull request, or session.
+3. Claim it with `dev_task_claim`. If another session holds it, coordinate with that session through `dev_peer_send` and the `task_id`. Never work around or take over another session's claim.
+4. Before you build, record your status. Use `dev_task_update` to post a progress note, and add the branch and pull request as soon as each one exists.
+5. Keep the task current until the work is done. Post progress and blockers with `dev_task_update`, use `dev_task_checkpoint` if you stop early, and finish with `dev_task_complete`, including commits, pull requests, and how you verified the work.
+6. If a claim or status tool is refused or missing, tell the user what is blocked and stop. Do not work around it, and do not present untracked work as tracked.
+
+Why: the board is how everyone working in this workspace, people and agents alike, knows what is happening. Work that is not on it gets duplicated or lost.
+
+Also:
+
 - Use a task that stands alone for a cold session: context, acceptance criteria, repository, and branch when known.
-- Claim only work this instance will perform. Respect work held by another instance.
 - Make changes only inside the repository and systems the user placed in scope.
 - Checkpoint unfinished claimed work with concrete progress, branch, reason, and next step. Do not abandon a claim silently.
 - Never auto-close, delete, or silently reprioritize ambiguous work.

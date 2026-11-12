@@ -1,6 +1,6 @@
 {
   "name": "centramind",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Operate Claude Code through your CentraMind workspace: shared board, project knowledge, durable memory, agent-to-agent mail, branded artifact publishing, and an explicit closeout protocol.",
   "author": {
     "name": "Eternium LLC",
